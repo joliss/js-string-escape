@@ -14,3 +14,13 @@ test('jsStringEscape invariants', function (t) {
   t.ok(eval('"' + jsStringEscape(allCharacters) + '"') === allCharacters)
   t.end()
 })
+
+test('supports arbitrary objects', function (t) {
+  t.equal(jsStringEscape(null), 'null')
+  t.equal(jsStringEscape(undefined), 'undefined')
+  t.equal(jsStringEscape(false), 'false')
+  t.equal(jsStringEscape(0.0), '0')
+  t.equal(jsStringEscape({}), '[object Object]')
+  t.equal(jsStringEscape(''), '')
+  t.end()
+})

@@ -20,6 +20,8 @@ eval("'" + jsStringEscape(s) + "'") === s
 
 These `eval` expressions are safe with untrusted strings `s`.
 
+Non-strings will be cast to strings.
+
 This library has been checked against [ECMAScript
 5.1](http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4) and tested
 against all Unicode code points.
