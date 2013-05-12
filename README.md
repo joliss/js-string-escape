@@ -1,6 +1,14 @@
 Escape any string to be a valid JavaScript string between double quotes or
 single quotes.
 
+## Installation
+
+```
+npm install js-string-escape
+```
+
+## Example
+
 If you need to generate JavaScript output, this library will help you safely
 put arbitrary data in JavaScript strings:
 
@@ -21,6 +29,8 @@ eval("'" + jsStringEscape(s) + "'") === s
 These `eval` expressions are safe with untrusted strings `s`.
 
 Non-strings will be cast to strings.
+
+## Compliance
 
 This library has been checked against [ECMAScript
 5.1](http://www.ecma-international.org/ecma-262/5.1/#sec-7.8.4) and tested
