@@ -1,5 +1,5 @@
-Escape any string to be a valid JavaScript string between double quotes or
-single quotes.
+Escape any string to be a valid JavaScript string literal between double
+quotes or single quotes.
 
 ## Installation
 
