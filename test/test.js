@@ -7,7 +7,8 @@ test('jsStringEscape invariants', function (t) {
     allCharacters += String.fromCharCode(i)
   }
 
-  t.equal(eval("'" + jsStringEscape(allCharacters) + "'"), allCharacters)
-  t.equal(eval('"' + jsStringEscape(allCharacters) + '"'), allCharacters)
+  // Do not use .equal; mega-diffs in the output are not helpful.
+  t.ok(eval("'" + jsStringEscape(allCharacters) + "'") === allCharacters)
+  t.ok(eval('"' + jsStringEscape(allCharacters) + '"') === allCharacters)
   t.end()
 })
