@@ -1,3 +1,7 @@
+# js-string-escape
+
+[![Build Status](https://travis-ci.org/joliss/js-string-escape.png?branch=master)](https://travis-ci.org/joliss/js-string-escape)
+
 Escape any string to be a valid JavaScript string literal between double
 quotes or single quotes.
 
