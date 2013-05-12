@@ -1,7 +1,12 @@
 var test = require('tap').test
 var jsStringEscape = require('../')
 
-test('jsStringEscape invariants', function (t) {
+test('basic use', function (t) {
+  t.equal(jsStringEscape('"Hello World!"'), '\\"Hello World!\\"')
+  t.end()
+})
+
+test('invariants', function (t) {
   var allCharacters = ''
   // JavaScript only supports the BMP (16-bit code points), so that's all we
   // need to test. http://stackoverflow.com/questions/3744721
