@@ -20,6 +20,6 @@
   "author": "Jo Liss <joliss42@gmail.com>",
   "license": "MIT",
   "devDependencies" : {
-    "tap": "latest"
+    "tap": "~> 0.4.2"
   }
 }
