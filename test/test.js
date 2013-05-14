@@ -1,6 +1,9 @@
-var punycode = require('punycode')
 var test = require('tap').test
 var jsStringEscape = require('../')
+
+// Require the local copy of Punycode.js, as we don't want to use the outdated
+// version that shipped with Node v0.8:
+var punycode = require('./../node_modules/punycode/punycode.js')
 
 test('basic use', function (t) {
   t.equal(jsStringEscape('"Hello World!"'), '\\"Hello World!\\"')
