@@ -1,3 +1,4 @@
+var punycode = require('punycode')
 var test = require('tap').test
 var jsStringEscape = require('../')
 
@@ -7,16 +8,25 @@ test('basic use', function (t) {
 })
 
 test('invariants', function (t) {
+
   var allCharacters = ''
-  // JavaScript only supports the BMP (16-bit code points), so that's all we
-  // need to test. http://stackoverflow.com/questions/3744721
-  for (var i = 0; i < 65536; i++) {
+  var i
+  // The Punycode.js version that ships with Node v0.8 won't create unmatched
+  // surrogate halves, so let's use `String.fromCharCode` for BMP code points.
+  for (i = 0; i <= 0x00FFFF; i++) {
     allCharacters += String.fromCharCode(i)
   }
+  // Generate strings based on astral code points. Trickier than it seems:
+  // http://mathiasbynens.be/notes/javascript-encoding
+  for (i = 0x010000; i <= 0x10FFFF; i++) {
+    allCharacters += punycode.ucs2.encode([ i ])
+  }
+
+  var escaped = jsStringEscape(allCharacters);
 
   // Do not use .equal; mega-diffs in the output are not helpful.
-  t.ok(eval("'" + jsStringEscape(allCharacters) + "'") === allCharacters)
-  t.ok(eval('"' + jsStringEscape(allCharacters) + '"') === allCharacters)
+  t.ok(eval("'" + escaped + "'") === allCharacters)
+  t.ok(eval('"' + escaped + '"') === allCharacters)
   t.end()
 })
 
