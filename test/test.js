@@ -11,7 +11,6 @@ test('basic use', function (t) {
 })
 
 test('invariants', function (t) {
-
   var allCharacters = ''
   var i
   // The Punycode.js version that ships with Node v0.8 won't create unmatched
