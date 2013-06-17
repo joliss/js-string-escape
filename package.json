@@ -1,6 +1,6 @@
 {
   "name": "js-string-escape",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Escape strings for use as JavaScript string literals",
   "main": "index.js",
   "scripts": {
