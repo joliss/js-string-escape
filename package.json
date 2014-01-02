@@ -25,11 +25,14 @@
     }
   ],
   "license": "MIT",
-  "devDependencies" : {
+  "devDependencies": {
     "tap": "~> 0.4.2",
     "punycode": "~> 1.2.1"
   },
   "engines": {
     "node": ">= 0.8"
+  },
+  "dependencies": {
+    "jsesc": "~0.4.3"
   }
 }
