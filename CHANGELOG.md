@@ -1,5 +1,7 @@
 # master
 
+* Exclude unused files from npm distribution
+
 # 1.0.0
 
 * No change; version bumped to indicate that this package is considered stable
