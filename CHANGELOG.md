@@ -1,5 +1,7 @@
 # master
 
+# 1.0.1
+
 * Exclude unused files from npm distribution
 
 # 1.0.0
