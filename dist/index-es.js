@@ -1,4 +1,4 @@
-module.exports = function (string) {
+function index (string) {
   return ('' + string).replace(/["'\\\n\r\u2028\u2029]/g, function (character) {
     // Escape all characters not included in SingleStringCharacters and
     // DoubleStringCharacters on
@@ -7,16 +7,22 @@ module.exports = function (string) {
       case '"':
       case "'":
       case '\\':
-        return '\\' + character
+        return '\\' + character;
       // Four possible LineTerminator characters need to be escaped:
+
       case '\n':
-        return '\\n'
+        return '\\n';
+
       case '\r':
-        return '\\r'
-      case '\u2028':
-        return '\\u2028'
-      case '\u2029':
-        return '\\u2029'
+        return '\\r';
+
+      case "\u2028":
+        return "\\u2028";
+
+      case "\u2029":
+        return "\\u2029";
     }
-  })
+  });
 }
+
+export default index;
