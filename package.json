@@ -2,14 +2,19 @@
   "name": "js-string-escape",
   "version": "1.0.1",
   "description": "Escape strings for use as JavaScript string literals",
-  "main": "index.js",
+  "main": "dist/index-umd.js",
+  "module": "dist/index-es.js",
   "scripts": {
-    "test": "tap test"
+    "test": "tap test",
+    "rollup": "rollup -c",
+    "eslint": "eslint ."
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/joliss/js-string-escape"
   },
+  "homepage": "https://github.com/joliss/js-string-escape",
+  "bugs": "https://github.com/joliss/js-string-escape/issues",
   "keywords": [
     "string",
     "escape",
@@ -22,17 +27,30 @@
     {
       "name": "Mathias Bynens",
       "url": "http://mathiasbynens.be/"
-    }
+    },
+    "Brett Zamir"
   ],
   "license": "MIT",
-  "devDependencies" : {
-    "tap": "~> 0.4.2",
-    "punycode": "~> 1.2.1"
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-babel": "^5.0.0",
+    "eslint": "7.0.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "punycode": "~2.1.1",
+    "rollup": "2.9.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "tap": "~>14.10.7"
   },
   "engines": {
     "node": ">= 0.8"
   },
   "files": [
-    "index.js"
+    "dist"
   ]
 }
