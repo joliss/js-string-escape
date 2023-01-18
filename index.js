@@ -17,6 +17,8 @@ module.exports = function (string) {
         return '\\u2028'
       case '\u2029':
         return '\\u2029'
+      default:
+        return character
     }
   })
 }
